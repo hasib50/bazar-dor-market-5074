@@ -1,6 +1,16 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 :root {
   --background: #f5faf7;
   --foreground: #12352b;
@@ -20,3 +30,4 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
