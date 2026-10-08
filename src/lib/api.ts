@@ -1,7 +1,8 @@
 import { Product } from "@/types/product";
+import { Category } from "@/types/category";
 
 const BASE_URL =
-  "https://api.api-store.workers.dev/api/bazardor";
+  "https://api.abcz.workers.dev/api/bazardor";
 
 export async function getProducts(
   category?: string
@@ -43,7 +44,7 @@ export async function getProductBySlug(
   );
 }
 
-export async function getCategories() {
+export async function getCategories(): Promise<Category[]> {
   const response = await fetch(
     `${BASE_URL}/categories`
   );
@@ -55,7 +56,9 @@ export async function getCategories() {
   return response.json();
 }
 
-export async function getCategory(slug: string) {
+export async function getCategory(
+  slug: string
+): Promise<Category> {
   const response = await fetch(
     `${BASE_URL}/categories/${slug}`
   );
